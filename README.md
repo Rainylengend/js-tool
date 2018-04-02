@@ -2,9 +2,11 @@
 
 # 自用的js工具库
 
+> 后续更新中
+
 ## js文件描述
 
-### virtual-dom.js 创建虚拟dom的方法
+- virtual-dom.js 创建虚拟dom的方法
 
 使用方法(兼容到IE9)
 

@@ -9,7 +9,7 @@
 使用方法(兼容到IE9)
 
 ```javascript
-var el = renderEl('div', {
+var el = renderEl('ul', {
     style: {
         color: 'red',
         fontSize: '16px'
@@ -19,6 +19,27 @@ var el = renderEl('div', {
        dataId: '1',
        dataName: 'Rainy'
     },
-    'content'
+    [
+        {
+          tagName: 'li', options: {
+            style: {
+              paddingLeft: '20px'
+            },
+            attrs: {
+              dataInfo: 'haha'
+            }
+          }, content: 0
+        },
+        {
+          tagName: 'li', options: {
+            style: {
+              paddingLeft: '20px'
+            },
+            attrs: {
+              dataInfo: 'haha2'
+            }
+          }, content: 1
+        }
+    ])
 })
 ```

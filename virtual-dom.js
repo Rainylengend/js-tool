@@ -41,9 +41,19 @@ var renderEl = (function () {
       }
     }
 
-    if (content && (typeof content === 'string' || typeof content === 'number')) {
+    if (typeof content === 'string' || typeof content === 'number') {
       el.innerHTML = content
-    } else {
+    } else if (content instanceof Array) {
+      var domFrg = document.createDocumentFragment()
+
+      content.forEach(function (item) {
+        var el = renderEl(item.tagName, item.options, item.content)
+
+        domFrg.appendChild(el)
+      })
+      el.appendChild(domFrg)
+    }
+    else {
       el.appendChild(content)
     }
 

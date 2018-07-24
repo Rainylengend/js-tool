@@ -17,6 +17,10 @@ ENUM(['MAN', 'WOMEN', 'OTHER']) -> {MEN: 0, WOMEN: 1, OTHER: 2, '0': 'MEN', '1':
 
 - deepClone -> 用于深度克隆数据的方法
 
+- debounce -> 防抖函数
+
+- throttle -> 节流函数
+
 
 -----------------
 - virtual-dom.js 创建虚拟dom的方法

@@ -54,11 +54,16 @@ function debounce(fn, delay) {
     var timer = null
     
     return function () {
+      var context = this
+      var arg = arguments
+      
         if(timer){
             clearTimeout(timer)
             timer = null
         }
-        timer = setTimeout(fn, delay)
+        timer = setTimeout(function() {
+          fn && fn.apply(context, arg)
+        }, delay)
     }
 }
 

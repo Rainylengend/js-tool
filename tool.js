@@ -52,26 +52,33 @@ function throttle(fn, wait) {
 
 function debounce(fn, delay, immidiate) {
     var timer = null
-    
+
     return function () {
-      var context = this
-      var arg = arguments
-      
-        if(immidiate){
+        var context = this
+        var arg = arguments
+
+        if (timer) {
+            clearTimeout(timer)
+        }
+        
+        if (immidiate && !timer) {
             fn && fn.apply(context, arg)
-            immidiate = false
+            timer = setTimeout(function () {
+                clearTimeout(timer)
+                timer = null
+            }, delay)
             return
         }
-      
-        if(timer){
+
+
+        timer = setTimeout(function () {
             clearTimeout(timer)
             timer = null
-        }
-        timer = setTimeout(function() {
-          fn && fn.apply(context, arg)
+            fn && fn.apply(context, arg)
         }, delay)
     }
 }
+
 
 function ENUM(obj) {
     let type = Object.prototype.toString.call(obj)

@@ -50,12 +50,18 @@ function throttle(fn, wait) {
     }
 }
 
-function debounce(fn, delay) {
+function debounce(fn, delay, immidiate) {
     var timer = null
     
     return function () {
       var context = this
       var arg = arguments
+      
+        if(immidiate){
+            fn && fn.apply(context, arg)
+            immidiate = false
+            return
+        }
       
         if(timer){
             clearTimeout(timer)

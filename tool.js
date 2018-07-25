@@ -105,18 +105,17 @@
         var reSS = /ss/g
         var reJoin = /-/g
 
-        format = format || 'yy-mm-dd hh:min:ss'
         function addZero(val) {
             if (val < 10) {
                 val = '0' + val
             }
             return val
         }
-
+        
+        format = format || 'yy-mm-dd hh:min:ss'
         joiner = joiner || '-'
-
         _date = new Date(val)
-
+        
         year = _date.getFullYear()
         month = addZero(_date.getMonth() + 1)
         date = addZero(_date.getDate())

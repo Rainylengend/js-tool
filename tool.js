@@ -3,14 +3,20 @@
 ;(function (global, factory) {
     if (typeof define === 'function' && (define.amd || define.cmd)) {
         define(factory)
-    }else if (typeof module === 'object' && typeof module.exports === 'object'){
+    } else if (typeof module === 'object' && typeof module.exports === 'object') {
         module.exports = factory()
-    }else{
+    } else {
         global.R = factory()
     }
 })(this, function () {
     'use strict'
-    function deepClone(arr) {
+
+    function R() {
+    }
+
+    R.fn = R.prototype
+
+    R.fn.deepClone = function (arr) {
         if (typeof arr !== "object") {
             return arr
         }
@@ -23,7 +29,7 @@
         return result;
     }
 
-    function throttle(fn, wait) {
+    R.fn.throttle = function (fn, wait) {
         var timer = null
         var now, pre, context, arg
 
@@ -60,7 +66,7 @@
         }
     }
 
-    function debounce(fn, delay, immidiate) {
+    R.fn.debounce = function (fn, delay, immidiate) {
         var timer = null
 
         return function () {
@@ -89,7 +95,7 @@
         }
     }
 
-    function ENUM(obj) {
+    R.fn.ENUM = function (obj) {
         var type = Object.prototype.toString.call(obj)
         var newObj = {}
 
@@ -118,11 +124,5 @@
 
         return newObj
     }
-
-    return {
-        deepClone: deepClone,
-        throttle: throttle,
-        debounce: debounce,
-        ENUM: ENUM
-    }
+    return new R()
 });

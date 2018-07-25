@@ -33,7 +33,7 @@ ENUM(['MAN', 'WOMEN', 'OTHER']) -> {MEN: 0, WOMEN: 1, OTHER: 2, '0': 'MEN', '1':
 formatDate(date[,format][,joiner])
 
 date：Date的实例或者时间戳
-formate：时间的格式默认为 'yy-mm-dd hh:min-ss' -> 2018-7-25 15:38:43
+formate：时间的格式默认为 'yy-mm-dd hh:min:ss' -> 2018-7-25 15:38:43
 joiner: 连接符， 会把 - 链接符替换为 joiner
 
 ```

@@ -106,10 +106,7 @@
         var reJoin = /-/g
 
         function addZero(val) {
-            if (val < 10) {
-                val = '0' + val
-            }
-            return val
+            return val < 10 ? '0' + val : val
         }
         
         format = format || 'yy-mm-dd hh:min:ss'

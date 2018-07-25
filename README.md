@@ -5,6 +5,11 @@
 > 后续更新中
 
 ## js文件描述
+
+### Tween.js
+
+> 张鑫旭大佬的运动函数，自己在里面加了抛物线运动，[如何使用？](http://www.zhangxinxu.com/wordpress/?p=5828)
+
 ### tool.js 各种工具库
 
 - ENUM

@@ -95,6 +95,48 @@
         }
     }
 
+    R.fn.formatDate = function (val, format, joiner) {
+        var year, month, date, hour, minutes, seconds, _date, formatDate
+        var reYY = /yy/g
+        var reMM = /mm/g
+        var reDD = /dd/g
+        var reHH = /hh/g
+        var reMin = /min/g
+        var reSS = /ss/g
+        var reJoin = /-/g
+
+        format = format || 'yy-mm-dd hh:min:ss'
+        function addZero(val) {
+            if (val < 10) {
+                val = '0' + val
+            }
+            return val
+        }
+
+        joiner = joiner || '-'
+
+        _date = new Date(val)
+
+        year = _date.getFullYear()
+        month = addZero(_date.getMonth() + 1)
+        date = addZero(_date.getDate())
+        hour = addZero(_date.getHours())
+        minutes = addZero(_date.getMinutes())
+        seconds = addZero(_date.getSeconds())
+
+        formatDate = format.replace(reYY, year)
+            .replace(reMM, month)
+            .replace(reDD, date)
+            .replace(reHH, hour)
+            .replace(reMin, minutes)
+            .replace(reSS, seconds)
+
+        if(joiner !== '-'){
+            formatDate = formatDate.replace(reJoin, joiner)
+        }
+        return formatDate
+    }
+
     R.fn.ENUM = function (obj) {
         var type = Object.prototype.toString.call(obj)
         var newObj = {}

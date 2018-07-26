@@ -44,6 +44,10 @@ joiner: 连接符， 会把 - 链接符替换为 joiner
 ### 观察者模式Emmiter
 > 支持amd、commonjs规范，兼容各种端
 
+```javascript
+var event = new Emmiter()
+```
+
 实现功能：
 
 - [x] event.on(evtName, fn)

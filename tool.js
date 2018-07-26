@@ -24,7 +24,7 @@
         var result = arr instanceof Array ? [] : {}
 
         for (var i in arr) {
-            result[i] = deepClone(arr[i])
+            result[i] = this.deepClone(arr[i])
         }
         return result;
     }

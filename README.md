@@ -46,10 +46,10 @@ joiner: 连接符， 会把 - 链接符替换为 joiner
 
 实现功能：
 
-- [x]event.on(evtName, fn)
-- [x]event.once(evtName, fn)
-- [x]event.emit(evtName[,...arg])
-- [x]event.removeListener(evtName[,fn]) -> 传入函数则移除该函数，不传入则全部移除
+- [x] event.on(evtName, fn)
+- [x] event.once(evtName, fn)
+- [x] event.emit(evtName[,...arg])
+- [x] event.removeListener(evtName[,fn]) -> 传入函数则移除该函数，不传入则全部移除
 
 -----------------
 

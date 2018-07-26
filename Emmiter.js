@@ -1,3 +1,5 @@
+/** create by songbw 2018/7/26 */
+
 (function (global, factory) {
     if(typeof define === 'function' && (define.amd || define.cmd)){
         define(factory)

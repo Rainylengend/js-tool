@@ -40,7 +40,20 @@ joiner: 连接符， 会把 - 链接符替换为 joiner
 
 
 -----------------
-- virtual-dom.js 创建虚拟dom的方法
+
+### 观察者模式Emmiter
+> 支持amd、commonjs规范，兼容各种端
+
+实现功能：
+
+- [x]event.on(evtName, fn)
+- [x]event.once(evtName, fn)
+- [x]event.emit(evtName[,...arg])
+- [x]event.removeListener(evtName[,fn]) -> 传入函数则移除该函数，不传入则全部移除
+
+-----------------
+
+### virtual-dom.js 创建虚拟dom的方法
 
 使用方法(兼容到IE9)
 

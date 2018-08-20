@@ -95,7 +95,7 @@
         }
     }
 
-    R.fn.formatDate = function (val, format, joiner) {
+    R.fn.formatDate = function (val, format, dateInfo) {
         var year, month, date, hour, minutes, seconds, _date, formatDate
         var reYY = /yy/g
         var reMM = /mm/g
@@ -103,7 +103,6 @@
         var reHH = /hh/g
         var reMin = /min/g
         var reSS = /ss/g
-        var reJoin = /-/g
 
         function addZero(val) {
             return val < 10 ? '0' + val : val
@@ -127,8 +126,15 @@
             .replace(reMin, minutes)
             .replace(reSS, seconds)
 
-        if(joiner !== '-'){
-            formatDate = formatDate.replace(reJoin, joiner)
+        if(dateInfo){
+            return {
+                year: year,
+                month: month,
+                date: date,
+                hour: hour,
+                minutes: minutes,
+                seconds: seconds
+            }
         }
         return formatDate
     }

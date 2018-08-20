@@ -109,8 +109,7 @@
         }
         
         format = format || 'yy-mm-dd hh:min:ss'
-        joiner = joiner || '-'
-        _date = new Date(val)
+        _date = val ? new Date(val) : new Date()
         
         year = _date.getFullYear()
         month = addZero(_date.getMonth() + 1)

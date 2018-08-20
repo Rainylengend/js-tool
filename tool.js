@@ -95,7 +95,7 @@
         }
     }
 
-    R.fn.formatDate = function (val, format, dateInfo) {
+    R.fn.formatDate = function (val, format, dateDetails) {
         var year, month, date, hour, minutes, seconds, _date, formatDate
         var reYY = /yy/g
         var reMM = /mm/g
@@ -107,10 +107,10 @@
         function addZero(val) {
             return val < 10 ? '0' + val : val
         }
-        
-        format = format || 'yy-mm-dd hh:min:ss'
+
+
         _date = val ? new Date(val) : new Date()
-        
+
         year = _date.getFullYear()
         month = addZero(_date.getMonth() + 1)
         date = addZero(_date.getDate())
@@ -118,14 +118,7 @@
         minutes = addZero(_date.getMinutes())
         seconds = addZero(_date.getSeconds())
 
-        formatDate = format.replace(reYY, year)
-            .replace(reMM, month)
-            .replace(reDD, date)
-            .replace(reHH, hour)
-            .replace(reMin, minutes)
-            .replace(reSS, seconds)
-
-        if(dateInfo){
+        if(dateDetails){
             return {
                 year: year,
                 month: month,
@@ -135,6 +128,15 @@
                 seconds: seconds
             }
         }
+
+        format = format || 'yy-mm-dd hh:min:ss'
+        formatDate = format.replace(reYY, year)
+            .replace(reMM, month)
+            .replace(reDD, date)
+            .replace(reHH, hour)
+            .replace(reMin, minutes)
+            .replace(reSS, seconds)
+
         return formatDate
     }
 

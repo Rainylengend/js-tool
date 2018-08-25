@@ -1,4 +1,4 @@
-![logo](http://songbw.cn/asset/img/icon.ico)
+![logo](https://rainylengend.github.io/asset/img/icon.ico)
 
 # 自用的js工具库
 

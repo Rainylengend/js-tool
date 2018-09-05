@@ -25,6 +25,7 @@
         case '[object String]': return 'String';
         case '[object Boolean]': return 'Boolean';
         case '[object Object]': return 'Object';
+        case '[object Undefined]': return 'Undefined';
       }
     }
 

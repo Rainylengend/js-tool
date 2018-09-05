@@ -64,7 +64,7 @@
         })
     }
 
-    Emmiter.fn.removeListener = function (evtName, fn) {
+    Emmiter.fn.off = function (evtName, fn) {
         var storeEvtName, onceStoreEvtName
 
         function removeFn(storeEvtName) {

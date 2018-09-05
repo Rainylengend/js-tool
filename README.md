@@ -12,6 +12,8 @@
 
 ### tool.js 各种工具库
 
+- getDataType: Array | Number | Boolean | Object | Null | String
+
 - ENUM
 
 ```

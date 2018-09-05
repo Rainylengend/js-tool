@@ -53,7 +53,7 @@ var event = new Emmiter()
 - [x] event.on(evtName, fn)
 - [x] event.once(evtName, fn)
 - [x] event.emit(evtName[,...arg])
-- [x] event.removeListener(evtName[,fn]) -> 传入函数则移除该函数，不传入则全部移除
+- [x] event.off(evtName[,fn]) -> 传入函数则移除该函数，不传入则全部移除
 
 -----------------
 

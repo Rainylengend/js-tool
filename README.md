@@ -30,11 +30,19 @@ ENUM(['MAN', 'WOMEN', 'OTHER']) -> {MEN: 0, WOMEN: 1, OTHER: 2, '0': 'MEN', '1':
 
 ```
 使用方法: 
-formatDate(date[,format][,joiner])
+formatDate(date[,format][,dateDetails])
 
 date：Date的实例或者时间戳
 formate：时间的格式默认为 'yy-mm-dd hh:min:ss' -> 2018-7-25 15:38:43
-joiner: 连接符， 会把 - 链接符替换为 joiner
+dateDetails: Boolean 返回的时候为格式化的时间信息
+{
+    year: year,
+    month: month,
+    date: date,
+    hour: hour,
+    minutes: minutes,
+    seconds: seconds
+}
 
 ```
 

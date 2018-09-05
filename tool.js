@@ -15,6 +15,18 @@
     }
 
     R.fn = R.prototype
+    
+    R.fn.getDataType(type) {
+      var val = Object.prototype.toString.call(type)
+      switch (val) {
+        case '[object Array]': return 'Array';
+        case '[object Number]': return 'Number';
+        case '[object Null]': return 'Null';
+        case '[object String]': return 'String';
+        case '[object Boolean]': return 'Boolean';
+        case '[object Object]': return 'Object';
+      }
+    }
 
     R.fn.deepClone = function (arr) {
         if (typeof arr !== "object") {

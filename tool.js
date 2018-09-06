@@ -160,7 +160,7 @@
         return formatDate
     }
 
-    R.fn.ENUM = function (obj) {
+    R.fn.enum = function (obj) {
         var type = Object.prototype.toString.call(obj)
         var newObj = {}
 

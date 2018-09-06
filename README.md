@@ -14,12 +14,12 @@
 
 - getDataType: Array | Number | Boolean | Object | Null | String | Undefined
 
-- ENUM
+- enum
 
 ```
-ENUM({a: 'x', b: '1', c: 3}) -> {a: 'x', b: '1', c: 3, x: 'a', '1': 'b', '3', 'c'}
+enum({a: 'x', b: '1', c: 3}) -> {a: 'x', b: '1', c: 3, x: 'a', '1': 'b', '3', 'c'}
 
-ENUM(['MAN', 'WOMEN', 'OTHER']) -> {MEN: 0, WOMEN: 1, OTHER: 2, '0': 'MEN', '1': 'WOMEN', '2': 'OTHER'}
+enum(['MAN', 'WOMEN', 'OTHER']) -> {MEN: 0, WOMEN: 1, OTHER: 2, '0': 'MEN', '1': 'WOMEN', '2': 'OTHER'}
 ```
 
 - deepClone -> 用于深度克隆数据的方法

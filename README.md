@@ -12,7 +12,7 @@
 
 ### tool.js 各种工具库
 
-- getDataType: Array | Number | Boolean | Object | Null | String
+- getDataType: Array | Number | Boolean | Object | Null | String | Undefined
 
 - ENUM
 

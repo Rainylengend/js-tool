@@ -15,18 +15,25 @@
     }
 
     R.fn = R.prototype
-    
-    R.fn.getDataType(type) {
-      var val = Object.prototype.toString.call(type)
-      switch (val) {
-        case '[object Array]': return 'Array';
-        case '[object Number]': return 'Number';
-        case '[object Null]': return 'Null';
-        case '[object String]': return 'String';
-        case '[object Boolean]': return 'Boolean';
-        case '[object Object]': return 'Object';
-        case '[object Undefined]': return 'Undefined';
-      }
+
+    R.fn.getDataType = function (type) {
+        var val = Object.prototype.toString.call(type)
+        switch (val) {
+            case '[object Array]':
+                return 'Array';
+            case '[object Number]':
+                return 'Number';
+            case '[object Null]':
+                return 'Null';
+            case '[object String]':
+                return 'String';
+            case '[object Boolean]':
+                return 'Boolean';
+            case '[object Object]':
+                return 'Object';
+            case '[object Undefined]':
+                return 'Undefined';
+        }
     }
 
     R.fn.deepClone = function (arr) {
@@ -131,7 +138,7 @@
         minutes = addZero(_date.getMinutes())
         seconds = addZero(_date.getSeconds())
 
-        if(dateDetails){
+        if (dateDetails) {
             return {
                 year: year,
                 month: month,

@@ -16,7 +16,7 @@
 
 - getChainVal(obj, chainKey)
 
-> 当获取链式对象的返回值为null、undefined是就不继续往下面查询，如果存在则返回对呀的值
+> 当获取链式对象的返回值为null、undefined是就不继续往下面查询，如果存在则返回对应的值
 
 ```javascript
 let obj = {

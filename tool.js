@@ -36,6 +36,23 @@
         }
     }
 
+    R.fn.getChainVal = function (obj, chainKey) {
+        if (this.getDataType(obj) !== 'Object') {
+            throw new Error('参数1为对象')
+        }
+        if (this.getDataType(chainKey) !== 'String') {
+            throw new Error('参数2为字符串')
+        }
+        var keyArr = chainKey.split('.')
+        var keyVal = obj
+        for (var i = 0, l = keyArr.length; i < l; i++) {
+            keyVal = keyVal[keyArr[i]]
+            if (!keyVal)
+                break
+        }
+        return keyVal
+    }
+
     R.fn.deepClone = function (arr) {
         if (typeof arr !== "object") {
             return arr

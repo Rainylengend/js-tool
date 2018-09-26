@@ -14,6 +14,28 @@
 
 - getDataType: Array | Number | Boolean | Object | Null | String | Undefined
 
+- getChainVal(obj, chainKey)
+
+> 当获取链式对象的返回值为null、undefined是就不继续往下面查询，如果存在则返回对呀的值
+
+```javascript
+let obj = {
+  parent: {
+    children: {
+      r: null,
+      b: {
+        c:888
+      }
+    }
+  }
+}
+getChainVal(obj, 'parent.children.b.c') // 888
+getChainVal(obj, 'parent1.children.b.c') // undefined
+getChainVal(obj, 'parent.children.r.c') // null
+getChainVal(obj, 'parent.children.r') // null
+getChainVal(obj, 'parent.children.b') // {c: 888}
+```
+
 - enum
 
 ```

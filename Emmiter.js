@@ -80,7 +80,7 @@
             }
         }
 
-        if (!this._store.hasOwnProperty(evtName) && !this._store.hasOwnProperty(evtName)) {
+        if (!this._store.hasOwnProperty(evtName) && !this._onceStore.hasOwnProperty(evtName)) {
             return
         }
 
